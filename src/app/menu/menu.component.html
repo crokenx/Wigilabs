@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg bg-blue">
+  <a class="navbar-brand" href="/Menu/Gallery">Wigilabs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/Gallery">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/Maps">Maps</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/ToDoList">ToDoList</a>
+      </li>
+      
+      
+    </ul>
+    <div class="col-lg-6"></div>
+    <li class="nav-item">
+      <a class="navbar-brand" href="/Login">Log Out</a>
+      <button (click)="auth.signOut()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </li>
+  </div>
+</nav>
