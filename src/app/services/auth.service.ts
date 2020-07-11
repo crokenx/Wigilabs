@@ -38,6 +38,7 @@ export class AuthService {
   async googleSignin(): Promise<any> {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
+    console.log('Credenciales', credential);
     return new Promise(() => {
       this.updateUserData(credential.user)
       this.router.navigate(['/Menu/Gallery'])

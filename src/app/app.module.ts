@@ -16,7 +16,7 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 var firebaseConfig = {
   apiKey: "AIzaSyB3t5HelTU44Jj4_suz9qMluWTz1M0JFLc",
@@ -47,11 +47,12 @@ var firebaseConfig = {
     AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
-  exports: [
-  ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

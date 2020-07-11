@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    console.log('que viene aqui?', this.auth.user$);
   }
 
 }

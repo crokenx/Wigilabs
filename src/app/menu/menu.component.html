@@ -1,4 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-blue">
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+
+</div>
+
+<ng-template #guest>
+<nav class="navbar navbar-expand-lg bg-blue" >
   <a class="navbar-brand" href="/Menu/Gallery">Wigilabs</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,3 +27,34 @@
     </li>   
   </div>
 </nav>
+</ng-template>
+
+<ng-template #authenticated>
+<nav class="navbar navbar-expand-lg bg-blue">
+  <!-- <a class="navbar-brand" href="/Menu/Gallery">Autenticado</a> -->
+  <div *ngIf="auth.user$ | async as user">
+      <img [src]="user.photoURL" class="avatar">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/Gallery">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/Maps">Maps</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Menu/ToDoList">ToDoList</a>
+      </li>
+      
+    </ul> 
+    <li class="nav-item">
+      <a class="navbar-brand" type="button" (click)="auth.signOut()">Log Out</a>
+    </li>   
+  </div>
+</nav>
+</ng-template>
