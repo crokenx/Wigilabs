@@ -14,6 +14,9 @@ import { MenuComponent } from './menu/menu.component';
 import { MapsComponent } from './maps/maps.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyB3t5HelTU44Jj4_suz9qMluWTz1M0JFLc",
@@ -42,7 +45,9 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   exports: [
   ],

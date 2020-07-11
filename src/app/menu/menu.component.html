@@ -16,14 +16,9 @@
         <a class="nav-link" href="/Menu/ToDoList">ToDoList</a>
       </li>
       
-      
-    </ul>
-    <div class="col-lg-6"></div>
+    </ul> 
     <li class="nav-item">
-      <a class="navbar-brand" href="/Login">Log Out</a>
-      <button (click)="auth.signOut()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </li>
+      <a class="navbar-brand" type="button" (click)="auth.signOut()">Log Out</a>
+    </li>   
   </div>
 </nav>

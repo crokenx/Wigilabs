@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { FormControl } from '@angular/forms';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-login',
@@ -9,11 +14,15 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   email;
-  password;
+  name = new FormControl('');
+  password = new FormControl('');
 
   constructor(
-    public auth: AuthService
-  ) { }
+    public auth: AuthService,
+    public faiconLibrary: FaIconLibrary
+  ) {
+    faiconLibrary.addIcons(faCoffee, faGoogle);
+   }
 
   ngOnInit(): void {
   }
