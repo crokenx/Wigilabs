@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationComponent } from './registration/registration.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyB3t5HelTU44Jj4_suz9qMluWTz1M0JFLc",
@@ -37,7 +38,8 @@ var firebaseConfig = {
     LoginComponent,
     MenuComponent,
     MapsComponent,
-    ToDoListComponent
+    ToDoListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

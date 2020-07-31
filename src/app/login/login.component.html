@@ -10,21 +10,26 @@
           </div>
           <div class="col-lg-6 py-5">
               <div class="card2 card border-0  py-5">
-                <div class="input-group px-3"> 
-                    <label class="mb-1">
-                        <h6 class="mb-0 text-sm">Usuario</h6>
-                    </label> 
-                    <input class="mb-4" type="text" name="email" placeholder="Ingrese su Email"> 
-                </div>
-                <div class="input-group px-3"> 
-                    <label class="mb-1">
-                        <h6 class="mb-0 text-sm">Contraseña</h6>
-                    </label> 
-                    <input type="password" name="password" placeholder="Ingrese su Contraseña"> 
-                </div>
-                    <label>
-                        ¿No tienes una cuenta? Creala <a><span class="span1"> Aqui </span></a>
-                    </label>
+              <form [formGroup]="login" (ngSubmit)="auth.login(login.value.email, login.value.password)">
+                    <div class="input-group px-3"> 
+                        <label class="mb-1">
+                            <h6 class="mb-0 text-sm">Usuario</h6>
+                        </label> 
+                        <input class="mb-4" type="email" formControlName="email" placeholder="Ingrese su Email"> 
+                    </div>
+                    <div class="input-group px-3"> 
+                        <label class="mb-1">
+                            <h6 class="mb-0 text-sm">Contraseña</h6>
+                        </label> 
+                        <input type="password" name="password" formControlName="password" placeholder="Ingrese su Contraseña"> 
+                    </div>
+                    <div class="m-3">
+                        <button type="submit" [disabled]="!login.valid" class="bg-blue mr-3">Login</button>
+                    </div>
+            </form>            
+            <label>
+                ¿No tienes una cuenta? Creala <a href="/Menu/Registration"><span class="span1"> Aqui </span></a>
+            </label>            
                 <div class="row mb-5 px-1">
                     <div class="col-md-12">
                         <a class="btn btn-lg " (click)="auth.googleSignin()">

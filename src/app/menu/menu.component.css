@@ -17,3 +17,21 @@
   height: 30px;
   border-radius: 50%;
 }
+
+.prueba {
+  text-align: center;
+  height: 35px;
+  display: inline-block;
+  padding: 7px 14px 10px 9px;
+  text-transform: none;
+  user-select: none;
+  touch-action: manipulation;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  width: auto;
+  background-color: #1bb76e;
+  box-shadow: 0 6px 10px 0 rgba(27,28,30,.31);
+  color: #fff;
+  white-space: nowrap;
+}
