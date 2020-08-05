@@ -11,15 +11,17 @@ import { RegistrationComponent } from './registration/registration.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Login', pathMatch: 'full' },
-  { path: 'Login', component:LoginComponent },
-  { path: 'Menu', children: [
-    { path: '', component: GalleryComponent },
-    { path: 'Gallery', component: GalleryComponent },
-    { path: 'Maps', component:MapsComponent },
-    { path: 'ToDoList', component: ToDoListComponent },
-    { path: 'Registration', component: RegistrationComponent }
-  ] }
+  { path: '', redirectTo: '/Menu/Gallery', pathMatch: 'full' },
+  { path: 'Login', component: LoginComponent },
+  {
+    path: 'Menu', children: [
+      { path: '', component: GalleryComponent },
+      { path: 'Gallery', component: GalleryComponent },
+      { path: 'Maps', component: MapsComponent },
+      { path: 'ToDoList', component: ToDoListComponent },
+      { path: 'Registration', component: RegistrationComponent }
+    ]
+  }
 ];
 
 @NgModule({

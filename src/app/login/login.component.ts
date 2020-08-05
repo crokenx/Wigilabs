@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -14,24 +16,24 @@ import { map } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
-  login = new FormGroup({ 
+  login = new FormGroup({
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   });
 
   constructor(
     public auth: AuthService,
-    public faiconLibrary: FaIconLibrary
+    public faiconLibrary: FaIconLibrary,
+    public router: Router
   ) {
     faiconLibrary.addIcons(faCoffee, faGoogle);
-   }
-
-  ngOnInit(): void {
   }
 
-  Login(){
-    console.log(this.login.value);
+  ngOnInit() {
+
   }
+
+
 
 }
 

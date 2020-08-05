@@ -1,52 +1,57 @@
-
 <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
   <div class="card card0 border-0">
-      <div class="row d-flex">
-          <div class="col-lg-6">
-              <div class="card1 pb-5">
-                  <div class="row"> <img src="https://wigilabs.com/wp-content/uploads/2020/04/logo_wigi_navbar.png" class="logo"> </div>
-                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
-              </div>
-          </div>
-          <div class="col-lg-6 py-5">
-              <div class="card2 card border-0  py-5">
-              <form [formGroup]="login" (ngSubmit)="auth.login(login.value.email, login.value.password)">
-                    <div class="input-group px-3"> 
-                        <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Usuario</h6>
-                        </label> 
-                        <input class="mb-4" type="email" formControlName="email" placeholder="Ingrese su Email"> 
-                    </div>
-                    <div class="input-group px-3"> 
-                        <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Contraseña</h6>
-                        </label> 
-                        <input type="password" name="password" formControlName="password" placeholder="Ingrese su Contraseña"> 
-                    </div>
-                    <div class="m-3">
-                        <button type="submit" [disabled]="!login.valid" class="bg-blue mr-3">Login</button>
-                    </div>
-            </form>            
-            <label>
-                ¿No tienes una cuenta? Creala <a href="/Menu/Registration"><span class="span1"> Aqui </span></a>
-            </label>            
-                <div class="row mb-5 px-1">
-                    <div class="col-md-12">
-                        <a class="btn btn-lg " (click)="auth.googleSignin()">
-                            <fa-icon [icon]="['fab', 'google']"></fa-icon>
-                            Sign In with Google
-                        </a>
-                    </div>
-                </div>                   
-              </div>
-          </div>
+    <div class="row d-flex">
+      <div class="col-lg-6">
+        <div class="card1 pb-5">
+          <div class="row"> <img src="https://wigilabs.com/wp-content/uploads/2020/04/logo_wigi_navbar.png"
+              class="logo"> </div>
+          <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png"
+              class="image"> </div>
+        </div>
       </div>
-      <div class="bg-blue py-4">
-          <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2020. All rights reserved.</small>
-              
+      <div class="col-lg-6 py-5">
+        <div class="card2 card border-0  py-5">
+          <form [formGroup]="login" (ngSubmit)="auth.login(login.value.email, login.value.password)">
+            <div class="input-group px-3">
+              <label class="mb-1">
+                <h6 class="mb-0 text-sm">Usuario</h6>
+              </label>
+              <input class="mb-4" type="email" formControlName="email" placeholder="Ingrese su Email">
+            </div>
+
+            <div style='color:#ff7355' *ngIf="auth.ERROR === 1">
+              Usuario No registrado
+            </div>
+
+            <div class="input-group px-3">
+              <label class="mb-1">
+                <h6 class="mb-0 text-sm">Contraseña</h6>
+              </label>
+              <input type="password" name="password" formControlName="password" placeholder="Ingrese su Contraseña">
+            </div>
+            <div class="m-3">
+              <button type="submit" [disabled]="!login.valid" class="bg-blue mr-3">Login</button>
+            </div>
+          </form>
+          <label>
+            ¿No tienes una cuenta? Creala <a href="/Menu/Registration"><span class="span1"> Aqui </span></a>
+          </label>
+          <div class="row mb-5 px-1">
+            <div class="col-md-12">
+              <a class="btn btn-lg " (click)="auth.googleSignin()">
+                <fa-icon [icon]="['fab', 'google']"></fa-icon>
+                Sign In with Google
+              </a>
+            </div>
           </div>
+        </div>
       </div>
+
+    </div>
+    <div class="bg-blue py-4">
+      <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright & copy; 2020. All rights reserved.</small>
+
+      </div>
+    </div>
   </div>
 </div>
-
-

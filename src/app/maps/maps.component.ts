@@ -7,13 +7,13 @@ import { AfterViewInit, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.css']
 })
-export class MapsComponent implements OnInit, AfterViewInit  {
+export class MapsComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('mapContainer', {static: false}) gmap: ElementRef;
+  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
 
   map: google.maps.Map;
-  lat = 40.730610;
-  lng = -73.935242;
+  lat = 4.694794;
+  lng = -74.086209;
   coordinates = new google.maps.LatLng(this.lat, this.lng);
 
   mapOptions: google.maps.MapOptions = {
@@ -36,9 +36,9 @@ export class MapsComponent implements OnInit, AfterViewInit  {
   }
 
   mapInitializer() {
-    this.map = new google.maps.Map(this.gmap.nativeElement, 
-    this.mapOptions);
+    this.map = new google.maps.Map(this.gmap.nativeElement,
+      this.mapOptions);
     this.marker.setMap(this.map);
-   }
+  }
 
 }
