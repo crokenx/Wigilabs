@@ -12,22 +12,25 @@
       <div class="col-lg-6 py-5">
         <div class="card2 card border-0  py-5">
           <form [formGroup]="login" (ngSubmit)="auth.login(login.value.email, login.value.password)">
-            <div class="input-group px-3">
+            <div class="px-3">
               <label class="mb-1">
-                <h6 class="mb-0 text-sm">Usuario</h6>
+                <h6 class="mb-0 text-sm">Email</h6>
               </label>
-              <input class="mb-4" type="email" formControlName="email" placeholder="Ingrese su Email">
+              <input [class.is-invalid]="login.get('email').invalid && login.get('email').touched" type="email"
+                formControlName="email" class="form-control" placeholder="Ingrese su Email">
+              <div class="invalid-feedback">
+                Ingrese un correo electronico valido
+              </div>
             </div>
-
-            <div style='color:#ff7355' *ngIf="auth.ERROR === 1">
-              Usuario No registrado
+            <div class="form-control is-invalid" *ngIf="auth.ERROR$ | async as error;">
+              {{ error.message }}
             </div>
-
-            <div class="input-group px-3">
+            <div class="px-3">
               <label class="mb-1">
                 <h6 class="mb-0 text-sm">Contraseña</h6>
               </label>
-              <input type="password" name="password" formControlName="password" placeholder="Ingrese su Contraseña">
+              <input type="password" name="password" formControlName="password" class="form-control"
+                placeholder="Ingrese su Contraseña">
             </div>
             <div class="m-3">
               <button type="submit" [disabled]="!login.valid" class="bg-blue mr-3">Login</button>
@@ -38,9 +41,15 @@
           </label>
           <div class="row mb-5 px-1">
             <div class="col-md-12">
+              Sign In with
               <a class="btn btn-lg " (click)="auth.googleSignin()">
                 <fa-icon [icon]="['fab', 'google']"></fa-icon>
-                Sign In with Google
+              </a>
+              <a class="btn btn-lg " (click)="auth.loginFacebook()">
+                <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+              </a>
+              <a class="btn btn-lg " (click)="auth.loginTwitter()">
+                <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
               </a>
             </div>
           </div>
